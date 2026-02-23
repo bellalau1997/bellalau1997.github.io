@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bella Lau - Professional Portfolio</title>
+    <title>Bella Lau - Social Media & Marketing Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -19,6 +19,7 @@
             margin: 0;
             padding: 20px;
             color: var(--primary);
+            line-height: 1.6;
         }
 
         .container {
@@ -31,19 +32,35 @@
         }
 
         header { text-align: center; margin-bottom: 40px; }
-        h1 { margin: 0; font-size: 2.5rem; color: var(--primary); font-weight: 700; letter-spacing: -1px; }
-        .subtitle { color: var(--accent); font-weight: 500; font-size: 1.1rem; }
+        h1 { margin: 0; font-size: 2.8rem; color: var(--primary); font-weight: 700; letter-spacing: -1px; }
+        .subtitle { color: var(--accent); font-weight: 500; font-size: 1.2rem; margin-top: 5px; }
 
-        .section { margin-bottom: 40px; border-bottom: 1px solid #eee; padding-bottom: 25px; }
-        h2 { display: flex; align-items: center; gap: 10px; font-size: 1.4rem; color: var(--accent); border-left: 4px solid var(--accent); padding-left: 15px; margin-bottom: 25px; }
+        .section { margin-bottom: 45px; border-bottom: 1px solid #eee; padding-bottom: 30px; }
+        h2 { display: flex; align-items: center; gap: 10px; font-size: 1.5rem; color: var(--accent); border-left: 4px solid var(--accent); padding-left: 15px; margin-bottom: 25px; }
 
-        /* Video Grid Styling */
-        .youtube-grid {
+        /* Professional Experience Styling */
+        .timeline-item { margin-bottom: 30px; }
+        .job-title { font-size: 1.2rem; font-weight: 700; margin: 0; color: var(--primary); }
+        .company { font-weight: 600; color: #636e72; font-size: 1rem; margin-bottom: 5px; }
+        .date { font-size: 0.9rem; color: #b2bec3; font-weight: 500; margin-bottom: 10px; display: block; }
+        .responsibilities { padding-left: 20px; margin-top: 10px; }
+        .responsibilities li { margin-bottom: 8px; }
+
+        /* Social Media & Video Grid */
+        .content-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 20px;
+            justify-items: center;
+        }
+        .instagram-embed-wrapper {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 12px;
+            overflow: hidden;
         }
         .youtube-embed {
+            width: 100%;
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
@@ -54,64 +71,40 @@
         .gallery-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 25px;
         }
-
         .flickr-embed-container {
             width: 100%;
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            background: #f9f9f9;
         }
+        .flickr-embed-container img { width: 100%; height: auto; display: block; }
+        .gallery-label { font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; color: #636e72; text-transform: uppercase; letter-spacing: 1px; text-align: center; }
 
-        .flickr-embed-container img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .gallery-label {
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: #636e72;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-align: center;
-        }
-
-        /* Creative Toolkit Styling */
+        /* Toolkit Styling */
         .toolkit-grid {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 12px;
             flex-wrap: wrap;
             margin-top: 20px;
         }
         .tool-card {
             background: #f1f2f6;
-            padding: 15px 30px;
+            padding: 10px 20px;
             border-radius: 50px;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 600;
-            color: var(--primary);
-            border: 1px solid #dcdde1;
-            transition: all 0.3s ease;
-        }
-        .tool-card:hover {
-            background: var(--accent);
-            color: white;
-            transform: translateY(-3px);
-            border-color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        .timeline-item { margin-bottom: 20px; padding-left: 20px; border-left: 2px solid #eee; }
-        .company { font-weight: 600; color: #636e72; }
         .contact-link { color: var(--accent); text-decoration: none; font-weight: 600; }
 
         @media (max-width: 768px) {
-            .gallery-grid, .youtube-grid { grid-template-columns: 1fr; }
+            .gallery-grid, .content-grid { grid-template-columns: 1fr; }
             .container { padding: 20px; }
         }
     </style>
@@ -126,27 +119,48 @@
         </header>
 
         <section class="section">
-            <h2><i class="fas fa-user"></i> Profile Summary</h2>
-            <p>Experienced social media manager and marketing professional with a focus on high-impact visual content, digital strategy, and brand engagement.</p>
+            <h2><i class="fas fa-briefcase"></i> Professional Experience</h2>
+            
+            <div class="timeline-item">
+                <p class="job-title">OISE Student Engagement Social Media Ambassador</p>
+                <p class="company">University of Toronto, Ontario Institute for Studies in Education</p>
+                <span class="date">2024 Sep – 2025 Aug</span>
+                <ul class="responsibilities">
+                    <li>Strategically updated and maintained OISE’s presence on Instagram, TikTok, and Facebook to ensure consistent messaging and maximum reach.</li>
+                    <li>Produced and edited engaging photo and video content highlighting student life and academic programs to promote school enrollment.</li>
+                    <li>Created viral Reels and increased overall profile activity and followers by 40% compared to the previous year.</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <p class="job-title">Public Education Manager</p>
+                <span class="date">Previous Tenure</span>
+                <ul class="responsibilities">
+                    <li>Coordinated and supported over 30 university- and NGO-partnered seminars, workshops, and exhibitions, overseeing event logistics and media coverage.</li>
+                    <li>Captured photos and video highlights to document key moments and engagement for promotional materials.</li>
+                    <li>Produced and edited short-form video content for social media, showcasing event outcomes and student experiences.</li>
+                    <li>Committed more than 1,000 volunteer hours delivering computer literacy training and organizing workshops on parenting, counseling, and positive youth development.</li>
+                </ul>
+            </div>
         </section>
 
         <section class="section">
-            <h2><i class="fas fa-briefcase"></i> Professional Experience</h2>
-            <div class="timeline-item">
-                <h3>OISE Student Engagement Social Media Ambassador</h3>
-                <p class="company">University of Toronto | 2024 – 2025</p>
-                <p>Strategically updated and maintained OISE's presence across multiple social media platforms, achieving over 34,000 total views.</p>
+            <h2><i class="fab fa-instagram"></i> Social Media Highlights</h2>
+            <div class="content-grid">
+                <div class="instagram-embed-wrapper">
+                    <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DE8VdgCOk7a/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; width:calc(100% - 2px);">
+                        </blockquote>
+                </div>
+                <div style="display: flex; align-items: center; max-width: 400px;">
+                    <p><i>"Featured work for <b>@oisevoices</b>: Creating community-driven content that highlights the vibrant student experience at the University of Toronto."</i></p>
+                </div>
             </div>
-            <div class="timeline-item">
-                <h3>Public Education Manager</h3>
-                <p class="company">Hong Kong Government Cultural Department | 2020 – 2022</p>
-                <p>Managed large-scale public seminars and cultural workshops, specializing in community education and art therapy sessions.</p>
-            </div>
+            <script async src="//www.instagram.com/embed.js"></script>
         </section>
 
         <section class="section">
             <h2><i class="fab fa-youtube"></i> Video Production</h2>
-            <div class="youtube-grid">
+            <div class="content-grid">
                 <div class="youtube-embed">
                     <iframe width="100%" height="250" src="https://www.youtube-nocookie.com/embed/piR4DsNI5fI" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
@@ -159,7 +173,6 @@
         <section class="section">
             <h2><i class="fas fa-camera"></i> Photography Gallery</h2>
             <div class="gallery-grid">
-                
                 <div>
                     <p class="gallery-label">General Portfolio</p>
                     <div class="flickr-embed-container">
@@ -168,7 +181,6 @@
                         </a>
                     </div>
                 </div>
-
                 <div>
                     <p class="gallery-label">Travel Photography</p>
                     <div class="flickr-embed-container">
@@ -177,7 +189,6 @@
                         </a>
                     </div>
                 </div>
-
             </div>
             <script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
         </section>
@@ -185,6 +196,9 @@
         <section class="section" style="border-bottom: none;">
             <h2><i class="fas fa-tools"></i> Creative Toolkit</h2>
             <div class="toolkit-grid">
+                <div class="tool-card"><i class="fas fa-camera"></i> Photography</div>
+                <div class="tool-card"><i class="fas fa-video"></i> Video Production</div>
+                <div class="tool-card"><i class="fas fa-users"></i> UGC Content</div>
                 <div class="tool-card"><i class="fas fa-cut"></i> CapCut</div>
                 <div class="tool-card"><i class="fas fa-paint-brush"></i> Canva</div>
                 <div class="tool-card"><i class="fab fa-adobe"></i> Adobe Creative Cloud</div>
