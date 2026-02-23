@@ -1,3 +1,8 @@
+Here is the updated code. I have modified the YouTube section to include a **two-column layout** for your videos. I also updated the second video link to the proper "embed" format to ensure it plays correctly on your site.
+
+### Updated HTML Code
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +13,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        /* This styling ensures the two videos sit side-by-side on desktop */
+        .youtube-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .youtube-embed {
+            margin-bottom: 15px;
+        }
+    </style>
 </head>
 <body>
     <div class="wave-decoration"></div>
@@ -104,18 +120,31 @@
         </section>
 
         <section class="section fade-in" id="youtube">
-            <h2><i class="fab fa-youtube"></i> YouTube Channel</h2>
+            <h2><i class="fab fa-youtube"></i> YouTube Showcase</h2>
             <div class="content">
-                <div class="youtube-embed">
-                    <iframe 
-                        width="100%" 
-                        height="315" 
-                        src="https://www.youtube.com/embed/piR4DsNI5fI" 
-                        title="YouTube video player" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
+                <div class="youtube-grid">
+                    <div class="youtube-embed">
+                        <iframe 
+                            width="100%" 
+                            height="250" 
+                            src="https://www.youtube.com/embed/piR4DsNI5fI" 
+                            title="NYC Experience" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="youtube-embed">
+                        <iframe 
+                            width="100%" 
+                            height="250" 
+                            src="https://www.youtube.com/embed/Qvqs9LJZnyo" 
+                            title="Mexico City Travel" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
                 </div>
             </div>
         </section>
@@ -226,4 +255,6 @@
 
     <script src="script.js"></script>
 </body>
-</html> 
+</html>
+
+```
