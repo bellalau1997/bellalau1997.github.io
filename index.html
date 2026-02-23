@@ -22,7 +22,7 @@
         }
 
         .container {
-            max-width: 1000px; /* Slightly wider to accommodate two columns */
+            max-width: 1000px;
             margin: 0 auto;
             background: white;
             padding: 40px;
@@ -31,7 +31,7 @@
         }
 
         header { text-align: center; margin-bottom: 40px; }
-        h1 { margin: 0; font-size: 2.5rem; color: var(--primary); font-weight: 700; }
+        h1 { margin: 0; font-size: 2.5rem; color: var(--primary); font-weight: 700; letter-spacing: -1px; }
         .subtitle { color: var(--accent); font-weight: 500; font-size: 1.1rem; }
 
         .section { margin-bottom: 40px; border-bottom: 1px solid #eee; padding-bottom: 25px; }
@@ -53,7 +53,7 @@
         /* Photography Gallery Grid */
         .gallery-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr; /* Two equal columns */
+            grid-template-columns: 1fr 1fr;
             gap: 20px;
         }
 
@@ -81,18 +81,37 @@
             text-align: center;
         }
 
+        /* Creative Toolkit Styling */
+        .toolkit-grid {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .tool-card {
+            background: #f1f2f6;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--primary);
+            border: 1px solid #dcdde1;
+            transition: all 0.3s ease;
+        }
+        .tool-card:hover {
+            background: var(--accent);
+            color: white;
+            transform: translateY(-3px);
+            border-color: var(--accent);
+        }
+
         .timeline-item { margin-bottom: 20px; padding-left: 20px; border-left: 2px solid #eee; }
         .company { font-weight: 600; color: #636e72; }
-        .date { font-size: 0.85rem; color: #b2bec3; font-style: italic; }
-        
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; }
-        .skill-card { background: #f1f2f6; padding: 12px; text-align: center; border-radius: 8px; font-size: 0.85rem; }
-
         .contact-link { color: var(--accent); text-decoration: none; font-weight: 600; }
 
         @media (max-width: 768px) {
-            .gallery-grid { grid-template-columns: 1fr; } /* Stacks on mobile */
-            .youtube-grid { grid-template-columns: 1fr; }
+            .gallery-grid, .youtube-grid { grid-template-columns: 1fr; }
             .container { padding: 20px; }
         }
     </style>
@@ -108,7 +127,7 @@
 
         <section class="section">
             <h2><i class="fas fa-user"></i> Profile Summary</h2>
-            <p>Experienced social media manager and marketing professional with a strong background in content creation, community engagement, and digital strategy. Skilled in video editing, UI/UX design, and data analysis.</p>
+            <p>Experienced social media manager and marketing professional with a focus on high-impact visual content, digital strategy, and brand engagement.</p>
         </section>
 
         <section class="section">
@@ -121,7 +140,7 @@
             <div class="timeline-item">
                 <h3>Public Education Manager</h3>
                 <p class="company">Hong Kong Government Cultural Department | 2020 – 2022</p>
-                <p>Conducted over 30 seminars and workshops; hosted art therapy sessions and organized parenting workshops.</p>
+                <p>Managed large-scale public seminars and cultural workshops, specializing in community education and art therapy sessions.</p>
             </div>
         </section>
 
@@ -161,29 +180,14 @@
 
             </div>
             <script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
-            
-            <p style="text-align: center; margin-top: 25px;">
-                <a href="https://www.flickr.com/photos/204295805@N06" target="_blank" class="contact-link">
-                    Explore all albums on Flickr <i class="fas fa-external-link-alt"></i>
-                </a>
-            </p>
-        </section>
-
-        <section class="section">
-            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
-            <p><strong>Bachelor of Arts (Hons) in Humanity/Culture Study</strong> - Hong Kong Baptist University</p>
-            <p><strong>Certificate of Cognitive Psychology</strong> - Hong Kong University</p>
         </section>
 
         <section class="section" style="border-bottom: none;">
-            <h2><i class="fas fa-code"></i> Skills & Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-card">Video Editing</div>
-                <div class="skill-card">UI/UX Design</div>
-                <div class="skill-card">Python & SQL</div>
-                <div class="skill-card">Canva & Figma</div>
-                <div class="skill-card">Social Media Strategy</div>
-                <div class="skill-card">Cinematography</div>
+            <h2><i class="fas fa-tools"></i> Creative Toolkit</h2>
+            <div class="toolkit-grid">
+                <div class="tool-card"><i class="fas fa-cut"></i> CapCut</div>
+                <div class="tool-card"><i class="fas fa-paint-brush"></i> Canva</div>
+                <div class="tool-card"><i class="fab fa-adobe"></i> Adobe Creative Cloud</div>
             </div>
         </section>
     </div>
