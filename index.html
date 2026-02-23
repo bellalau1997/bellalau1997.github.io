@@ -22,7 +22,7 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px; /* Slightly wider to accommodate two columns */
             margin: 0 auto;
             background: white;
             padding: 40px;
@@ -31,11 +31,11 @@
         }
 
         header { text-align: center; margin-bottom: 40px; }
-        h1 { margin: 0; font-size: 2.5rem; color: var(--primary); font-weight: 700; letter-spacing: -1px; }
-        .subtitle { color: var(--accent); font-weight: 500; font-size: 1.1rem; margin-top: 5px; }
+        h1 { margin: 0; font-size: 2.5rem; color: var(--primary); font-weight: 700; }
+        .subtitle { color: var(--accent); font-weight: 500; font-size: 1.1rem; }
 
         .section { margin-bottom: 40px; border-bottom: 1px solid #eee; padding-bottom: 25px; }
-        h2 { display: flex; align-items: center; gap: 10px; font-size: 1.4rem; color: var(--accent); border-left: 4px solid var(--accent); padding-left: 15px; margin-bottom: 20px; }
+        h2 { display: flex; align-items: center; gap: 10px; font-size: 1.4rem; color: var(--accent); border-left: 4px solid var(--accent); padding-left: 15px; margin-bottom: 25px; }
 
         /* Video Grid Styling */
         .youtube-grid {
@@ -50,17 +50,35 @@
             background: #000;
         }
 
-        /* Photography Section Styling */
+        /* Photography Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two equal columns */
+            gap: 20px;
+        }
+
         .flickr-embed-container {
             width: 100%;
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            background: #f9f9f9;
         }
+
         .flickr-embed-container img {
             width: 100%;
             height: auto;
             display: block;
+        }
+
+        .gallery-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #636e72;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
         }
 
         .timeline-item { margin-bottom: 20px; padding-left: 20px; border-left: 2px solid #eee; }
@@ -72,9 +90,10 @@
 
         .contact-link { color: var(--accent); text-decoration: none; font-weight: 600; }
 
-        @media (max-width: 600px) {
-            .container { padding: 20px; }
+        @media (max-width: 768px) {
+            .gallery-grid { grid-template-columns: 1fr; } /* Stacks on mobile */
             .youtube-grid { grid-template-columns: 1fr; }
+            .container { padding: 20px; }
         }
     </style>
 </head>
@@ -89,9 +108,7 @@
 
         <section class="section">
             <h2><i class="fas fa-user"></i> Profile Summary</h2>
-            <div class="content">
-                <p>Experienced social media manager and marketing professional with a strong background in content creation, community engagement, and digital strategy. Skilled in video editing, UI/UX design, and data analysis.</p>
-            </div>
+            <p>Experienced social media manager and marketing professional with a strong background in content creation, community engagement, and digital strategy. Skilled in video editing, UI/UX design, and data analysis.</p>
         </section>
 
         <section class="section">
@@ -99,12 +116,12 @@
             <div class="timeline-item">
                 <h3>OISE Student Engagement Social Media Ambassador</h3>
                 <p class="company">University of Toronto | 2024 – 2025</p>
-                <p>Strategically updated and maintained OISE's presence across multiple social media platforms (Instagram, TikTok), achieving 34,682 total views.</p>
+                <p>Strategically updated and maintained OISE's presence across multiple social media platforms, achieving over 34,000 total views.</p>
             </div>
             <div class="timeline-item">
                 <h3>Public Education Manager</h3>
                 <p class="company">Hong Kong Government Cultural Department | 2020 – 2022</p>
-                <p>Conducted over 30 seminars and workshops; hosted art therapy sessions and organized parenting workshops focusing on counseling strategies.</p>
+                <p>Conducted over 30 seminars and workshops; hosted art therapy sessions and organized parenting workshops.</p>
             </div>
         </section>
 
@@ -122,15 +139,32 @@
 
         <section class="section">
             <h2><i class="fas fa-camera"></i> Photography Gallery</h2>
-            <div class="flickr-embed-container">
-                <a data-flickr-embed="true" href="https://www.flickr.com/photos/204295805@N06" title="Bella Lau Photography">
-                    <img src="https://live.staticflickr.com/65535/55112400031_c37b0d054c_h.jpg" width="100%" alt="Flickr Portfolio"/>
-                </a>
-                <script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+            <div class="gallery-grid">
+                
+                <div>
+                    <p class="gallery-label">General Portfolio</p>
+                    <div class="flickr-embed-container">
+                        <a data-flickr-embed="true" href="https://www.flickr.com/photos/204295805@N06" title="Bella Lau Photography">
+                            <img src="https://live.staticflickr.com/65535/55112400031_c37b0d054c_h.jpg" alt="Flickr Portfolio"/>
+                        </a>
+                    </div>
                 </div>
-            <p style="text-align: center; margin-top: 15px;">
+
+                <div>
+                    <p class="gallery-label">Travel Photography</p>
+                    <div class="flickr-embed-container">
+                        <a data-flickr-embed="true" href="https://www.flickr.com/photos/204295805@N06/albums/72177720332171682" title="TRAVEL PHOTOGRAPHY">
+                            <img src="https://live.staticflickr.com/65535/55112670043_278c90edb6.jpg" alt="TRAVEL PHOTOGRAPHY"/>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            <script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+            
+            <p style="text-align: center; margin-top: 25px;">
                 <a href="https://www.flickr.com/photos/204295805@N06" target="_blank" class="contact-link">
-                    Explore full photostream on Flickr <i class="fas fa-external-link-alt"></i>
+                    Explore all albums on Flickr <i class="fas fa-external-link-alt"></i>
                 </a>
             </p>
         </section>
